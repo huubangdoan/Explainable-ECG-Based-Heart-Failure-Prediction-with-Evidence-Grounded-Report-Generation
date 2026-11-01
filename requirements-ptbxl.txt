@@ -1,0 +1,14 @@
+# PTB-XL pipeline for Line; Python 3.12; resolved from PyPI on 2026-10-24.
+# Install in the project .venv before starting any notebook kernel.
+numpy==2.5.4
+pandas==3.1.0
+scipy==1.18.1
+wfdb==4.3.1
+matplotlib==3.11.2
+nbformat==5.11.1
+nbclient==0.11.0
+ipykernel==7.4.0
+tqdm==4.70.1
+jupyterlab==4.6.4
+requests==2.34.2
+pytest==9.1.1

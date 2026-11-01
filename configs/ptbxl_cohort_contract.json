@@ -1,0 +1,43 @@
+{
+  "accepted_records": 21387,
+  "checksum_catalog_sha256": "b7224b92b341511ec3ceb13dc6652079b2c36a06504bcb49506f157f51dc695d",
+  "classes": [
+    "NORM",
+    "MI",
+    "STTC",
+    "CD",
+    "HYP"
+  ],
+  "cohort_sha256": "117ae446e46a09e45520b22b951ea48c5938c8d3f0737572c148ebf4ebc42b75",
+  "leads": [
+    "I",
+    "II",
+    "III",
+    "aVR",
+    "aVL",
+    "aVF",
+    "V1",
+    "V2",
+    "V3",
+    "V4",
+    "V5",
+    "V6"
+  ],
+  "producer_implementation_sha256": "751903fb8ede9baa95d1e5e28f9e96f95963da0a12fae4036b0b64b340cbc24f",
+  "reference_release": {
+    "audit_sha256": "fec4db02dc60fdb99093c0629cc73d96c6217748a647a05b5d14ee834ce1b2c6",
+    "fingerprint": "678c7aaaeccbd4ff5bfef3e39b56a4daece41626102b24704675bd08823910a9"
+  },
+  "schema_version": 1,
+  "source_metadata_sha256": {
+    "ptbxl_database.csv": "7600de9c1b27d181d850b3c6038a35d7c3ddb6bb33b702e3a20252a6859d216b",
+    "scp_statements.csv": "ad05b0b1fcae83bb1230755ad9cfc7c96f303feddc08a4a9ad5bdc9ca63bac8f"
+  },
+  "source_records": 21799,
+  "source_version": "1.0.3",
+  "split_counts": {
+    "test": 2158,
+    "train": 17083,
+    "validation": 2146
+  }
+}

@@ -1,0 +1,8 @@
+# Python3.12; Torch installed separately from official CUDA12.6 index by Setup-School.ps1.
+numpy==2.5.4
+pandas==3.1.0
+scipy==1.18.1
+wfdb==4.3.1
+matplotlib==3.11.2
+requests==2.34.2
+pytest==9.1.1

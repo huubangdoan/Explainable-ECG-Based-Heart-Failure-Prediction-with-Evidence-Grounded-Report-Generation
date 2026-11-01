@@ -1,0 +1,7 @@
+# Preserve byte-level source identities when cloning on Windows.
+*.py text eol=lf
+*.json text eol=lf
+*.ps1 text eol=lf
+*.md text eol=lf
+*.ipynb text eol=lf
+*.txt text eol=lf

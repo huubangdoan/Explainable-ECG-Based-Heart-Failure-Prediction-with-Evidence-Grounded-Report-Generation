@@ -1,0 +1,36 @@
+{
+  "schema_version": 1,
+  "suite_id": "ptbxl103_preprocessing_v1",
+  "source": {
+    "version": "1.0.3",
+    "expected_fingerprint": "678c7aaaeccbd4ff5bfef3e39b56a4daece41626102b24704675bd08823910a9",
+    "expected_audit_sha256": "fec4db02dc60fdb99093c0629cc73d96c6217748a647a05b5d14ee834ce1b2c6",
+    "expected_records": 21799,
+    "expected_accepted": 21387
+  },
+  "seeds": [42, 2024, 3407],
+  "reference_experiment": "reference100",
+  "variants": [
+    {"id": "official100_minimal", "source": "official100", "fs": 100, "filter": "minimal"},
+    {"id": "derived100_minimal", "source": "release500", "fs": 100, "filter": "minimal"},
+    {"id": "derived200_minimal", "source": "release500", "fs": 200, "filter": "minimal"},
+    {"id": "minimal500", "source": "release500", "fs": 500, "filter": "minimal"},
+    {"id": "bandpass500", "source": "release500", "fs": 500, "filter": "bandpass_0.5_40"}
+  ],
+  "experiments": [
+    {"id": "reference100", "variant": "official100_minimal", "normalization": "global"},
+    {"id": "derived100", "variant": "derived100_minimal", "normalization": "global"},
+    {"id": "derived200", "variant": "derived200_minimal", "normalization": "global"},
+    {"id": "minimal500_global", "variant": "minimal500", "normalization": "global"},
+    {"id": "minimal500_per_lead", "variant": "minimal500", "normalization": "per_lead"},
+    {"id": "bandpass500_global", "variant": "bandpass500", "normalization": "global"},
+    {"id": "bandpass500_per_lead", "variant": "bandpass500", "normalization": "per_lead"}
+  ],
+  "training": {
+    "architecture": "resnet1d_wang", "epochs": 50, "batch_size": 128,
+    "learning_rate": 0.01, "weight_decay": 0.01, "crop_seconds": 2.5,
+    "eval_stride_seconds": 1.25, "aggregation": "max", "workers": 0,
+    "amp": true, "scheduler": "onecycle", "kernel_policy": "scale_odd"
+  },
+  "evaluation": {"bootstrap_replicates": 1000, "bootstrap_seed": 42}
+}

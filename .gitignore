@@ -218,3 +218,9 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+
+# Local PTB-XL source, prepared datasets, and execution output
+/.venv-train/
+/data/
+/artifacts/
+/notebooks/ptbxl/.ipynb_checkpoints/
