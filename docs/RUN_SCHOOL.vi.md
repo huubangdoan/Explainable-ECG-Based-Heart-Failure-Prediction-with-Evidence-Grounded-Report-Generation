@@ -1,5 +1,7 @@
 # Chạy PTB-XL trên máy trường Windows — Line
 
+Nếu lượt cũ từ commit `4369d39` dừng ở **18/21 job** với lỗi `Official100 header contract mismatch`, dùng [hướng dẫn phục hồi](RECOVER_OFFICIAL100.vi.md). Bản sửa đổi fingerprint: giữ nguyên `school_run` cũ và dùng recovery để chuyển kết quả có kiểm chứng sang thư mục mới; không chạy bootstrap mới vào work directory cũ.
+
 Gói này chuẩn bị **7 cấu hình × 3 seed = 21 lượt huấn luyện**, chạy tuần tự trên một GPU. Máy đích đã dự kiến: Windows, RAM64GB, RTX3090, thư mục `C:\Users\ProfLoan\Research\Na\DA`. Cách chuyển hiện tại: lấy mã từ GitHub hoặc ZIP mã nhỏ, rồi tải PTB-XL trực tiếp và chuẩn bị release trên máy trường; không cần upload gói dữ liệu gần8GB từ laptop. **Chỉ chạy các lệnh setup/bootstrap/preflight/run bên dưới ở máy trường. Chưa train, suy luận hay chạy lại preprocessing dữ liệu thật trên laptop.**
 
 Đã có kiểm tra fixtures và cú pháp trên laptop. Khả năng chạy CUDA, mức dùng VRAM, checkpoint resume thực tế và thời gian hoàn thành là **Not verified** cho đến khi kiểm tra ở máy trường. Không có cam kết điểm số hoặc số giờ trước khi đo. Một lần gửi có thể đủ nếu các bước preflight đạt; lỗi GPU/driver/mạng vẫn cần xử lý theo log, không bị che bằng tự giảm batch.

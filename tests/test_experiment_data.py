@@ -290,6 +290,40 @@ class DataTests(unittest.TestCase):
             self.assertEqual(metadata["variant"]["source"], "official100")
             self.assertEqual(X.shape, (2, 12, 1000))
 
+    def test_official100_lead_names_allow_case_only_and_preserve_values(self):
+        self.make_official100()
+        source = self.root / "remote"
+        relative = "records100/00000/00001_lr"
+        row = pd.Series({"filename_lr": relative})
+        header_path = source / (relative + ".hea")
+        original = header_path.read_text().splitlines()
+        expected = wfdb.rdrecord(str(source / relative), physical=True).p_signal.T.astype(np.float32)
+        uppercase = [name.upper() for name in data.LEADS]
+        cases = {
+            "canonical": list(data.LEADS),
+            "official_uppercase": uppercase,
+            "swapped": [uppercase[1], uppercase[0], *uppercase[2:]],
+            "duplicate": [uppercase[0], *uppercase[:-1]],
+            "missing": uppercase[:-1],
+            "unknown": [*uppercase[:-1], "V7"],
+        }
+        catalog = {relative + ".dat": sha(source / (relative + ".dat"))}
+        for case, names in cases.items():
+            with self.subTest(case=case):
+                record_fields = original[0].split()
+                record_fields[1] = str(len(names))
+                lines = [" ".join(record_fields)]
+                for line, name in zip(original[1:], names):
+                    lines.append(line.rsplit(maxsplit=1)[0] + " " + name)
+                header_path.write_text("\n".join(lines) + "\n")
+                catalog[relative + ".hea"] = sha(header_path)
+                if case in ("canonical", "official_uppercase"):
+                    actual = data._official_signal(row, self.raw, source, catalog, False)
+                    np.testing.assert_array_equal(actual, expected)
+                else:
+                    with self.assertRaisesRegex(ValueError, "header contract mismatch"):
+                        data._official_signal(row, self.raw, source, catalog, False)
+
     def test_untrusted_official_catalog_rejected(self):
         self.make_official100()
         variant = {"id": "official100", "source": "official100", "fs": 100, "filter": "minimal"}

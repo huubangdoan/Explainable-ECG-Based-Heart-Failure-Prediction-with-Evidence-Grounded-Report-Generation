@@ -1,0 +1,18 @@
+{
+  "base_commit": "4369d39712b9f7412af7b7819524271f29155afb",
+  "change_description": "Only ordered official100 lead-name comparison ignores case; AVR/AVL/AVF accepted as aVR/aVL/aVF. No source bytes, order, units, waveform transform, release500 path, model, training, protocol or evaluation change.",
+  "new_code_fingerprint": "5a4c23113d6b70334f5e671d679044363b452ba3a766fae9c1da472b41df9107",
+  "new_data_sha256": "b4bf2c2871ded05ec24a6bda0ffb348d8de1b0804e777a5a057e5e55fb63bc97",
+  "old_code_fingerprint": "aadbe89ae3c176d8b2a71aae3f0b285013881a0e655a3a8ebaed97127f1f1690",
+  "old_data_sha256": "3169da29f51ab860382484f1fa96f4b01805f31a83eab0844ffef01c53409792",
+  "recovery_id": "official100-lead-case-v1",
+  "schema_version": 1,
+  "unchanged_files": {
+    "ptbxl_experiments/__init__.py": "b21f8db6423519198acb33fdcfa75aa37097b8c7583d8a4bdf1ef7ceb0b396fd",
+    "ptbxl_experiments/metrics.py": "8dbc93e060af18b632e2b6f2677fbc4dc2cf5dd6b0b9de5e7ace6648ec5ce87c",
+    "ptbxl_experiments/model.py": "d7f3c2bded8db5c8242e39427c05775635fecdce04977c2eb8bc8bb8f98f30ee",
+    "ptbxl_experiments/protocol.py": "d241f020db35037bdf7d4ddac66d320e3442049b831c47daa0c17edf11158453",
+    "ptbxl_experiments/suite.py": "6850805812b2141824d64c52658594c121eacdf9f3c7de965a4e9c8948d944b3",
+    "ptbxl_experiments/training.py": "f63b9d2a6e9fdc606e097722d90a6d695488d25509d5f38ecfdd3dc9ebb40f4f"
+  }
+}

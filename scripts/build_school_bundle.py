@@ -16,10 +16,12 @@ ROOT = Path(__file__).resolve().parents[1]
 TEXT_PATHS = (
     "README.md", ".gitignore", ".gitattributes", "requirements-ptbxl.txt", "requirements-ecg-train.txt",
     "configs/ptbxl_experiments.json", "configs/ptbxl_cohort_contract.json", "docs/RUN_SCHOOL.vi.md",
+    "configs/official100_recovery_v1.json", "docs/RECOVER_OFFICIAL100.vi.md",
     "reports/PTBXL_PIPELINE_VERIFICATION.vi.md", "reports/PTBXL_PIPELINE_INDEPENDENT_REVIEW.vi.md",
     ".planning/terminal-benchmark/SPEC.md", ".planning/terminal-benchmark/CONTRACT.md",
     ".planning/terminal-benchmark/RESEARCH.md", ".planning/terminal-benchmark/BOOTSTRAP.md",
     "scripts/run_ecg_experiments.py", "scripts/bootstrap_school.py",
+    "scripts/recover_official100.py", "tests/test_official100_recovery.py", ".planning/official100-recovery/SPEC.md",
     "scripts/build_school_bundle.py", "scripts/run_ptbxl.py",
     "scripts/windows/Setup-School.ps1", "scripts/windows/Run-School.ps1", "scripts/windows/Bootstrap-School.ps1",
     "notebooks/ptbxl/README.vi.md", "tests/test_school_bundle.py", "tests/test_bootstrap.py",

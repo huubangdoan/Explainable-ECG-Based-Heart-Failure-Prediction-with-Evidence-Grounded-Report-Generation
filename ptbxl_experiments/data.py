@@ -345,8 +345,9 @@ def _official_signal(row, raw, local, catalog, allow_download):
         _official_file(raw, local, relative + extension, catalog, allow_download)
     record_path = _safe_path(local, relative)
     header = wfdb.rdheader(str(record_path))
+    # Official headers use AVR/AVL/AVF; ignore case while preserving lead order.
     if (header.fs != 100 or header.sig_len != 1000 or header.n_sig != 12 or
-            header.sig_name != list(LEADS) or header.units != ["mV"] * 12 or
+            [name.upper() for name in header.sig_name] != [name.upper() for name in LEADS] or header.units != ["mV"] * 12 or
             set(header.file_name) != {record_path.name + ".dat"}):
         raise ValueError(f"Official100 header contract mismatch: {relative}")
     record = wfdb.rdrecord(str(record_path), physical=True)
